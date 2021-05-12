@@ -31,42 +31,42 @@ window.onload = function () {
 
     // Parallax при русі мишки
 
-    // function setMouseParallaxStyle(): void {
-    //   console.log(1);
-    //   const distX: number = coordXprocent - positionX;
-    //   const distY: number = coordYprocent - positionY;
+    function setMouseParallaxStyle(): void {
+      console.log(1);
+      const distX: number = coordXprocent - positionX;
+      const distY: number = coordYprocent - positionY;
 
-    //   positionX = positionX + (distX * speed);
-    //   positionY = positionY + (distY * speed);
+      positionX = positionX + (distX * speed);
+      positionY = positionY + (distY * speed);
 
-    //   console.log(
-    //     positionX,
-    //     positionY
-    //   );
+      console.log(
+        positionX,
+        positionY
+      );
 
-    //   // Передача стилів`
-    //   clouds.style.cssText = `transform: translate(${positionX / forClouds}%, ${positionY / forClouds}%);`;
-    //   mountains.style.cssText = `transform: translate(${positionX / forMountains}%, ${positionY / forMountains}%);`;
-    //   gradient.style.cssText = `transform: translate(${positionX / forGradient}%, ${positionY / forGradient}%);`;
-    //   human.style.cssText = `transform: translate(${positionX / forHuman}%, ${positionY / forHuman}%);`;
+      // Передача стилів`
+      clouds.style.cssText = `transform: translate(${positionX / forClouds}%, ${positionY / forClouds}%);`;
+      mountains.style.cssText = `transform: translate(${positionX / forMountains}%, ${positionY / forMountains}%);`;
+      gradient.style.cssText = `transform: translate(${positionX / forGradient}%, ${positionY / forGradient}%);`;
+      human.style.cssText = `transform: translate(${positionX / forHuman}%, ${positionY / forHuman}%);`;
 
-    //   requestAnimationFrame(setMouseParallaxStyle);
-    // }
-    // setMouseParallaxStyle();
+      requestAnimationFrame(setMouseParallaxStyle);
+    }
+    setMouseParallaxStyle();
 
-    // parallax.addEventListener("mousemove", function (e) {
-    //   // Отримання ширини та висоти блока
-    //   const parallaxWidth = parallax.offsetWidth;
-    //   const parallaxHeight = parallax.offsetHeight;
+    parallax.addEventListener("mousemove", function (e) {
+      // Отримання ширини та висоти блока
+      const parallaxWidth = parallax.offsetWidth;
+      const parallaxHeight = parallax.offsetHeight;
 
-    //   // Ноль на середині
-    //   const coordX = e.pageX - parallaxWidth / 2;
-    //   const coordY = e.pageY - parallaxHeight / 2;
+      // Ноль на середині
+      const coordX = e.pageX - parallaxWidth / 2;
+      const coordY = e.pageY - parallaxHeight / 2;
 
-    //   // Отримання потрібних процентів
-    //   coordXprocent = coordX / parallaxWidth * 100;
-    //   coordYprocent = coordY / parallaxHeight * 100;
-    // });
+      // Отримання потрібних процентів
+      coordXprocent = coordX / parallaxWidth * 100;
+      coordYprocent = coordY / parallaxHeight * 100;
+    });
 
 
     // Parallax при скролі

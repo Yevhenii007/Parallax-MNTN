@@ -35,19 +35,20 @@ body {
 
 	}
 
-	// &__images {
-	// 	position: absolute;
-	// 	width: 110%;
-	// 	height: 110%;
-	// 	top: -8%;
-	// 	left: -8%;
-	// 	z-index: 1;
-	// }
+	&__images {
+		position: absolute;
+		width: 110%;
+		height: 110%;
+		top: -8%;
+		left: -8%;
+		z-index: 1;
+	}
 }
 
 .images-parallax {
 
 	&__item {
+		z-index: 2;
 	}
 
 	&__item,
@@ -66,30 +67,25 @@ body {
 	&__clouds {
 		background: url('../img/HGclouds.png') top / cover no-repeat;
 		top: 0;
-		z-index: 1;
 	}
 
 	&__mountains {
 		background: url('../img/MGmountains.png') top / cover no-repeat;
 		height: 150%;
 		top: 45%;
-		z-index: 2;
 	}
 
 	&__gradient {
-		background: linear-gradient(300deg, rgba(255, 255, 255, 0) 0%, rgba(11,29,38,0.4) 100%);
+		background: linear-gradient(300deg, rgba(255, 255, 255, 0) 0%, rgba(11, 29, 38, 0.4) 100%);
 		top: 0;
-		z-index: 3;
 	}
 
 	&__mainTitle {
-		z-index: 4;
 	}
 
 	&__human {
 		background: url('../img/VGhuman.png') top / cover no-repeat;
-		top: 75%;
-		z-index: 5;
+		top: 70%;
 	}
 
 	&__container {
@@ -131,9 +127,10 @@ body {
 }
 
 .eclipse {
-	height: 300px;
+	height: 250px;
 	pointer-events: none;
 }
+
 
 .content {
 	background-color: #0b1d26;
@@ -142,7 +139,53 @@ body {
 
 	&__container {}
 
-	&__title {}
+	&__title {
+		font-size: 35px;
+		margin-bottom: 30px;
+	}
 
-	&__text {}
+	&__text {
+		font-size: 16px;
+		line-height: 150%;
+	}
+
+	&__text p {
+		margin-bottom: 30px;
+	}
+}
+
+.content::before {
+	pointer-events: none;
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 300px;
+	transform: translate(0px, -100%);
+	background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgb(11, 29, 38) 100%);
+}
+
+@media (max-width: 767px) {
+	.parallax__title {
+		font-size: 50px;
+	}
+
+	.parallax__label {
+		font-size: 14px;
+		margin-bottom: 15px;
+	}
+
+}
+
+@media (max-width: 479px) {
+	.parallax__title {
+		font-size: 36px;
+	}
+
+	.parallax__label::before {
+		flex: 0 0 40px;
+		margin-right: 10px;
+	}
+
 }

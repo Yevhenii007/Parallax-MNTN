@@ -16,6 +16,28 @@ window.onload = function () {
         let positionY = 0;
         let coordXprocent = 0;
         let coordYprocent = 0;
+        function setMouseParallaxStyle() {
+            console.log(1);
+            const distX = coordXprocent - positionX;
+            const distY = coordYprocent - positionY;
+            positionX = positionX + (distX * speed);
+            positionY = positionY + (distY * speed);
+            console.log(positionX, positionY);
+            clouds.style.cssText = `transform: translate(${positionX / forClouds}%, ${positionY / forClouds}%);`;
+            mountains.style.cssText = `transform: translate(${positionX / forMountains}%, ${positionY / forMountains}%);`;
+            gradient.style.cssText = `transform: translate(${positionX / forGradient}%, ${positionY / forGradient}%);`;
+            human.style.cssText = `transform: translate(${positionX / forHuman}%, ${positionY / forHuman}%);`;
+            requestAnimationFrame(setMouseParallaxStyle);
+        }
+        setMouseParallaxStyle();
+        parallax.addEventListener("mousemove", function (e) {
+            const parallaxWidth = parallax.offsetWidth;
+            const parallaxHeight = parallax.offsetHeight;
+            const coordX = e.pageX - parallaxWidth / 2;
+            const coordY = e.pageY - parallaxHeight / 2;
+            coordXprocent = coordX / parallaxWidth * 100;
+            coordYprocent = coordY / parallaxHeight * 100;
+        });
         let thresholdSets = [];
         for (let i = 0; i <= 1.0; i += 0.005) {
             thresholdSets.push(i);
