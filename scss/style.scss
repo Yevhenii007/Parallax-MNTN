@@ -1,0 +1,148 @@
+@import "_reset";
+
+@import "_fonts";
+
+body {
+	background-color: #0b1d26;
+	color: #fff;
+	font-family: 'Rubik';
+}
+
+
+.wrapper {
+	min-height: 100%;
+}
+
+._container {
+	max-width: 1000px;
+	margin: 0px auto;
+	padding: 0px 20px;
+}
+
+.navbar {
+	&__body {}
+}
+
+.parallax {
+	min-height: 100vh;
+
+	&__body {
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+
+	}
+
+	// &__images {
+	// 	position: absolute;
+	// 	width: 110%;
+	// 	height: 110%;
+	// 	top: -8%;
+	// 	left: -8%;
+	// 	z-index: 1;
+	// }
+}
+
+.images-parallax {
+
+	&__item {
+	}
+
+	&__item,
+	&__clouds,
+	&__mountains,
+	&__gradient,
+	&__mainTitle,
+	&__human {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+	}
+
+	&__clouds {
+		background: url('../img/HGclouds.png') top / cover no-repeat;
+		top: 0;
+		z-index: 1;
+	}
+
+	&__mountains {
+		background: url('../img/MGmountains.png') top / cover no-repeat;
+		height: 150%;
+		top: 45%;
+		z-index: 2;
+	}
+
+	&__gradient {
+		background: linear-gradient(300deg, rgba(255, 255, 255, 0) 0%, rgba(11,29,38,0.4) 100%);
+		top: 0;
+		z-index: 3;
+	}
+
+	&__mainTitle {
+		z-index: 4;
+	}
+
+	&__human {
+		background: url('../img/VGhuman.png') top / cover no-repeat;
+		top: 75%;
+		z-index: 5;
+	}
+
+	&__container {
+		max-width: fit-content;
+		position: relative;
+		z-index: 2;
+	}
+
+	&__label {
+		text-transform: uppercase;
+		color: #fbd784;
+		display: flex;
+		font-size: 12px;
+		font-weight: 900;
+		letter-spacing: 5px;
+		margin-bottom: 20px;
+		align-items: center;
+	}
+
+	&__label::before {
+		flex: 0 0 70px;
+		content: "";
+		margin-right: 30px;
+		background-color: #fbd784;
+		height: 1px;
+	}
+
+	&__title {
+		font-size: 60px;
+		font-family: 'PlayfairDisplay';
+	}
+
+}
+
+@media (max-aspect-ratio: 3/2) {
+	.images-parallax__human {
+		background-position: 20% top;
+	}
+}
+
+.eclipse {
+	height: 300px;
+	pointer-events: none;
+}
+
+.content {
+	background-color: #0b1d26;
+	position: relative;
+	z-index: 2;
+
+	&__container {}
+
+	&__title {}
+
+	&__text {}
+}
